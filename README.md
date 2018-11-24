@@ -9,6 +9,7 @@ First you want to specify which command gets executed at which scheduled time. Y
 ```sh
 sudo crontab -u $USER -e
 ```
+*comment: crontab -e opens the User crontab, and sudo crontab -e opens the Global crontab*
 #### Global
 ```sh
 sudo crontab -e
@@ -58,3 +59,11 @@ substitute the pid value. You stop the cronjob with the kill command.
 
 ## Important Comments
 Use the user crontab command. I don't know why, but only that command works properly. If you use the global crontab -e, than the python script not get executed.
+### Cronjobs in WSL work in background
+Even if you close the WSL terminal in VS Code, the cronjob will run continuesly!
+
+### Additional Info
+```sh
+usermod -a -G crontab (username)
+```
+Will add yourself to crontab group. Don't know exactly why you need that and how that works. [Referenced StackOverflow Post](https://stackoverflow.com/questions/41281112/crontab-not-working-with-bash-on-ubuntu-on-windows)
