@@ -55,3 +55,6 @@ shows every process. Search for cron and get the first value (process id).
 sudo kill -9 pid
 ```
 substitute the pid value. You stop the cronjob with the kill command.
+
+## Important Comments
+Use the user crontab command. I don't know why, but only that command works properly. If you use the global crontab -e, than the python script not get executed.
