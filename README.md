@@ -1,7 +1,7 @@
 # scrapy_with_cron_in_wsl
-Scrapy Framework example combined with cron in wsl
+Scrapy Framework example combined with cron in wsl. First time worked with XPath as query language to access the html.
 ## What does the Script do?
-It scrapes four specific routes of [https://www.telekom.de/](https://www.telekom.de/). Checks if the products are available and opens the browser to buy them.
+It scrapes four specific routes of [https://www.telekom.de/](https://www.telekom.de/). Checks if the products are available and opens the browser to the specific (available) routes to buy them.
 ## Set up Cronjob
 ### Add job to crontab
 First you want to specify which command gets executed at which scheduled time. You do this in a crontab.
