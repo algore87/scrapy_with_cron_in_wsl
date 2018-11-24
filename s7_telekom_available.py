@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+"""
+Webscraper based on https://www.packtpub.com/mapt/book/big_data_and_business_intelligence/9781787285217/1/ch01lvl1sec14/scraping-python.org-with-scrapy
+"""
+
 import scrapy, time, webbrowser
 from scrapy.crawler import CrawlerProcess
 
