@@ -2,8 +2,6 @@
 import scrapy, time, webbrowser
 from scrapy.crawler import CrawlerProcess
 
-found = False # if found, stop crawling
-
 class PythonEventsSpider(scrapy.Spider):
     name = 'pythoneventsspider'
 
@@ -40,11 +38,8 @@ def crawl():
             if available.get('color').lower() in url:
                 webbrowser.open(url)    # export BROWSER=/mnt/c/Windows/explorer.exe to run main default browser in .bashrc
                                         # set BROWSER in /etc/profile.d or /etc/environment to use it with cronjob
-                found = True
-    return found
 
 
 if __name__ == "__main__":
-    found = crawl()
-    print(found)
+    crawl()
     
