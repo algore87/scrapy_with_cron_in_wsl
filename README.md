@@ -1,7 +1,7 @@
 # scrapy_with_cron_in_wsl
 Scrapy Framework example combined with cron in wsl
 ## What does the Script do?
-
+It scrapes four specific routes of [https://www.telekom.de/](https://www.telekom.de/). Checks if the products are available and opens the browser to buy them.
 ## Set up Cronjob
 ### Add job to crontab
 First you want to specify which command gets executed at which scheduled time. You do this in a crontab.
@@ -58,7 +58,7 @@ sudo kill -9 pid
 substitute the pid value. You stop the cronjob with the kill command.
 
 ## Important Comments
-Use the user crontab command. I don't know why, but only that command works properly. If you use the global crontab -e, than the python script not get executed.
+Use the user crontab command. I don't know why, but only that command works properly. If you use the global crontab -e, than the python script not get executed. That means you dont need to add the line to the sudo crontab -e!
 ### Cronjobs in WSL work in background
 Even if you close the WSL terminal in VS Code, the cronjob will run continuesly!
 
