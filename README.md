@@ -5,9 +5,15 @@ Scrapy Framework example combined with cron in wsl
 ## Set up Cronjob
 ### Add job to crontab
 First you want to specify which command gets executed at which scheduled time. You do this in a crontab.
+#### User
 ```sh
 sudo crontab -u $USER -e
 ```
+#### Global
+```sh
+sudo crontab -e
+```
+
 Now schedule the execution
 ```sh
 ┌───────────── minute (0 - 59)
