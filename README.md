@@ -70,3 +70,4 @@ Will add yourself to crontab group. Don't know exactly why you need that and how
 ## References
 [Python Webscraping Cookbook](https://www.packtpub.com/mapt/book/big_data_and_business_intelligence/9781787285217) from [Mapt](https://www.packtpub.com/mapt)
 [XPath Cheatsheet](https://devhints.io/xpath)
+[XPath Tester](https://codebeautify.org/Xpath-Tester#)
