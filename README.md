@@ -69,4 +69,5 @@ usermod -a -G crontab (username)
 Will add yourself to crontab group. Don't know exactly why you need that and how that works. [Referenced StackOverflow Post](https://stackoverflow.com/questions/41281112/crontab-not-working-with-bash-on-ubuntu-on-windows)
 ## References
 [Python Webscraping Cookbook](https://www.packtpub.com/mapt/book/big_data_and_business_intelligence/9781787285217) from [Mapt](https://www.packtpub.com/mapt/)
+
 [XPath Cheatsheet](https://devhints.io/xpath)
