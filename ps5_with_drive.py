@@ -16,7 +16,7 @@ class PythonEventsSpider(scrapy.Spider):
     def parse(self, response):
         for event in response.xpath('//*[@id="offer__price-0"]/span'): # xpath found with chrome STRG+SHIFT+I, select the element and right_click->Copy->Copy XPATH
             event_details = dict()
-            event_details['price'] = int(event.xpath('//span[@class="gh_price"]/text()').extract_first()[2:5]) # cuts (example: '€ 719,00' -> '719') and casts to integer
+            event_details['price'] = float(event.xpath('//span[@class="gh_price"]/text()').extract_first()[2:8].replace(',', '.')) # cuts (example: '€ 719,00' -> '719,00') and casts to float
             self.found_events.append(event_details)
 
 def crawl():
@@ -26,13 +26,11 @@ def crawl():
     process.start()
 
     for event in spider.found_events:
-        print('Verfügbarer Preis: {}'.format(event['price']))
-        if event['price'] < 720: # only open browsertab if the price is below xxx euros
+        print('Preis am {} -> {:.2f} €'.format(time.strftime('%d.%m.%y um %H:%M'),event['price']))
+        if event['price'] < 600: # only open browsertab if the price is below xxx euros
             webbrowser.open(spider.start_urls[0])   # export BROWSER=/mnt/c/Windows/explorer.exe to run main default browser in .bashrc
                                                     # set BROWSER in /etc/profile.d or /etc/environment to use it with cronjob
     
-
-
 
 if __name__ == "__main__":
     crawl()
